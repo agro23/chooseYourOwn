@@ -10,6 +10,7 @@ import { StartComponent } from './start/start.component';
 import { routing } from './app.routing';
 import { NavbarComponent } from './navbar/navbar.component';
 import { UserEntryComponent } from './user-entry/user-entry.component';
+import { WakeupComponent } from './wakeup/wakeup.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -23,7 +24,8 @@ export const firebaseConfig = {
     AppComponent,
     StartComponent,
     NavbarComponent,
-    UserEntryComponent
+    UserEntryComponent,
+    WakeupComponent
   ],
   imports: [
     BrowserModule,
