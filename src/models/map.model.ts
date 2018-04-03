@@ -2,7 +2,7 @@ import { Item } from './item.model'
 
 export class Map{
 
-  items: Item[]
-  visted: boolean;
-  constructor(name: string, shrtDesc: string, longDesc: string,) {}
+  public items: Item[]
+  public visted: boolean;
+  constructor(public name: string, public shrtDesc: string, public longDesc: string,) {}
 }

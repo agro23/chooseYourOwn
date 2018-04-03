@@ -9,6 +9,7 @@ import { HttpModule } from '@angular/http';
 import { StartComponent } from './start/start.component';
 import { routing } from './app.routing';
 import { NavbarComponent } from './navbar/navbar.component';
+import { UserEntryComponent } from './user-entry/user-entry.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -21,7 +22,8 @@ export const firebaseConfig = {
   declarations: [
     AppComponent,
     StartComponent,
-    NavbarComponent
+    NavbarComponent,
+    UserEntryComponent
   ],
   imports: [
     BrowserModule,
