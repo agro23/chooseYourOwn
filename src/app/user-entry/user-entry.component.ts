@@ -13,6 +13,7 @@ import { FirebaseListObservable } from 'angularfire2/database';
 export class UserEntryComponent implements OnInit {
   newUser: User;
   users: FirebaseListObservable<any[]>;
+  userSet: boolean = false;
 
   constructor(private userService: UserService) { }
 
@@ -25,10 +26,10 @@ export class UserEntryComponent implements OnInit {
     let charm = Math.floor(Math.random()*15)+6
     this.newUser = new User(name, con, charm);
     this.userService.addUser(this.newUser);
+    this.userSet = true;
   }
 
   startGame(key: string){
-    console.log(key);
     this.userService.setCurrentUser(key)
   }
 

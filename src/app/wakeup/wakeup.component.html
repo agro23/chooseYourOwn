@@ -1,36 +1,54 @@
-<div class="card">
-  <img class="card-image-top" src="">
-  <div class="card-body">
-    <div *ngIf="currentView === 0">
-      <h3>Wake Up</h3>
-      <p>You wake up. You don't want to. Everything aches, from your feet to your head. Even the sun pounding against the blinds in your livingroom hurts, like you can hear the photons knocking to get in. You drank too much last night.</p>
-      <p>At least you made it home from the party. Or was the party here? It's all a blur.</p>
-      <p>Your eyes swim back to focus and your gaze lands on the clock. 12:00. Noon. Something about the time nags at you, pulsing in time with the throbbing in your skull. You'll have to do something about that. </p>
-    </div>
-    <div *ngIf="currentView === 1">
-      <h3>Look at Clock</h3>
-    </div>
+<!-- TEXT -->
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="card">
+    <img class="card-image-top" src="">
+    <div class="card-body">
+      <div *ngIf="currentView === 0">
+        <h3>Wake Up</h3>
+        <p>You wake up. You don't want to. Everything aches, from your feet to your head. Even the sun pounding against the blinds in your livingroom hurts, like you can hear the photons knocking to get in. You drank too much last night.</p>
+        <p>At least you made it home from the party. Or was the party here? It's all a blur.</p>
+        <p>Your eyes swim back to focus and your gaze lands on the clock. 12:00. Noon. Something about that time nags at you, pulsing along with the throb in your skull. You'll have to do something about that. </p>
+      </div>
+      <div *ngIf="currentView === 1">
+        <h3>Look at Clock</h3>
+      </div>
 
-  </div>
-</div>
-
-<div class ="card">
-  <div class="card-body">
-    <div class="row">
-      <button type="button" class="btn btn-info" name="button" (click)=optionOne(WakeupComponent)>Look at clock</button>
-    </div><br>
-    <div class="row">
-      <button type="button" class="btn btn-info" name="button">Sit up</button>
-    </div><br>
-    <div class="row">
-      <button type="button" class="btn btn-info" name="button">Crawl to bathroom to die</button>
-    </div><br>
-    <div class="row">
-      <button type="button" class="btn btn-info" name="button">Go back to sleep. Tomorrow's another day.</button>
     </div>
   </div>
-</div>
+  <!-- BUTTONS -->
+  <div class ="card">
+    <div class="card-body">
+      <div *ngIf="currentView === 0">
+        <div class="row">
+          <button type="button" class="btn btn-info" name="button" (click)=optionOne(WakeupComponent)>Look at clock</button>
+        </div><br>
+      </div>
+      <div *ngIf="currentView === 0 || currentView === 1">
+        <div class="row">
+          <button type="button" class="btn btn-info" name="button">Sit up</button>
+        </div><br>
+      </div>
+      <div *ngIf="currentView === 0 || currentView === 1">
+        <div class="row">
+          <button type="button" class="btn btn-info" name="button">Crawl to bathroom to die</button>
+        </div><br>
+      </div>
+      <div *ngIf="currentView === 0 || currentView === 1">
+        <div class="row">
+          <button type="button" class="btn btn-info" name="button">Go back to sleep. Tomorrow's another day.</button>
+        </div>
+        <br>
+      </div>
+      <div *ngIf="currentView === 1">
+        <div class="row">
+          <button type="button" class="btn btn-info" name="button" (click)=optionTwo(WakeupComponent)>Panic!</button>
+        </div><br>
+      </div>
+    </div>
+  </div>
 
-<div id="clock">
+  <div id="clock">
 
+  </div>
 </div>
