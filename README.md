@@ -8,3 +8,8 @@ As a user, I want to be able to select from at least 2 options at the end each s
 As a user, I would like my choices to affect my points, so I can tell if I am winning or not.
 As a user, I want to be able to see my current points at any given time.
 As a user, I want to be informed that I've lost if my points go beyond a minimum level.
+
+**NOTE**
+Going to have to get the database key every single time.
+
+Each button should trigger and 'update screen' function that updates the nav bar including score, # turns, etc. It would be in the Nav bar and the Nav bar would update once onInit (once you've chose your guy) first. 

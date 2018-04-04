@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { User } from '../../models/user.model';
 import { FirebaseListObservable } from 'angularfire2/database';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-user-entry',
@@ -15,7 +17,7 @@ export class UserEntryComponent implements OnInit {
   users: FirebaseListObservable<any[]>;
   userSet: boolean = false;
 
-  constructor(private userService: UserService) { }
+  constructor(private router: Router, private userService: UserService) { }
 
   ngOnInit() {
     this.users = this.userService.getUsers()
@@ -29,9 +31,23 @@ export class UserEntryComponent implements OnInit {
     this.userSet = true;
   }
 
-  startGame(key: string){
-    this.userService.setCurrentUser(key)
+  // startGame(key: string){
+  //   this.userService.setCurrentUser(key)
+  //   console.log("in startGame in user-entry, key is " + key);
+  // }
+  startGame(user){
+    // this.userService.setCurrentUser(key)
+    this.userService.currentUserKey=user.$key;
+    console.log("this.userService.currentUserKey " + this.userService.currentUserKey);
+    console.log("in startGame in user-entry, key is " + user.$key);
+    this.router.navigate(['wakeup']);
+    User.key = user.$key;
+    // nav-bar service pass in the key. So OnInit in every room would call that service
   }
+
+  // goToDetailPage(clickedAlbum) {
+  //   this.router.navigate(['albums', clickedAlbum.$key]);
+  // }
 
 }
 

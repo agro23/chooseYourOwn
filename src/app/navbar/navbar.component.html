@@ -1,15 +1,16 @@
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
     <div class="navbar-header">
-      <a class="navbar-brand logo" href="#">{{ title }}</a>
+      <!-- <a class="navbar-brand logo" href="#">{{ title }}</a> -->
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li>Name: {{currentUsername}}</li>
-        <li>ADD ROUTE HERE</li>
-      </ul>
-      <ul class="nav navbar-nav account">
-        <li>ADD ROUTE HERE</li>
-        <li>ADD ROUTE HERE</li>
+        <!-- <li>Name: </li>{{currentUser.name}} -->
+        <li>Key: {{currentUserKey.$key}}</li>
+        <li>Constitution: {{con}}</li>
+        <li>Charm: {{charm}}</li>
+        <li>Money: {{money}}</li>
+        <li>Karma: {{karma}}</li>
+        <li (click)= "displayUser()">click me</li>
       </ul>
     </div>
 </nav>

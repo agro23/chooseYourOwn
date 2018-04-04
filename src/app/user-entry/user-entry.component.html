@@ -17,7 +17,8 @@
 <br>
 <div class="card">
   <ul>
-    <li *ngFor='let user of users | async' (click)=startGame(user.$key) routerLink="/wakeup">
+    <!-- <li *ngFor='let user of users | async' (click)=startGame(user.$key) routerLink="/wakeup"> -->
+    <li *ngFor='let user of users | async' (click)=startGame(user)>
       <h3>Name: {{user.name}}</h3>
       <p>Constitution: {{user.con}}</p>
       <p>Charm: {{user.charm}}</p>

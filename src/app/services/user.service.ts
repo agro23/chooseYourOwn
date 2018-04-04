@@ -6,7 +6,7 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 @Injectable()
 export class UserService {
   users: FirebaseListObservable<any[]>;
-  public currentUserKey: string;
+  public currentUserKey;
 
   constructor(private database: AngularFireDatabase) {
     this.users = database.list('users');
@@ -21,11 +21,13 @@ export class UserService {
   }
 
   getUserById(userId: string){
+    console.log("userId " + userId);
     return this.database.object('user/' + userId);
   }
 
   setCurrentUser(key: string){
     this.currentUserKey = key;
+    console.log("in service, key at setCurrentUser is: " + key);
   }
 
   getCurrentUser(){
